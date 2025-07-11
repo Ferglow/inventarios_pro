@@ -9,6 +9,7 @@ import carrito from "../../assets/carrito.svg";
 import logo from "../../assets/inventarioslogo.png";
 import { MdOutlineInfo } from "react-icons/md";
 import { ThemeContext } from "../../App";
+import { RegistrarAdmin } from "../organismos/formularios/RegistrarAdmin";
 export function LoginTemplate() {
   const { setTheme } = useContext(ThemeContext);
   setTheme("light");
@@ -45,13 +46,18 @@ export function LoginTemplate() {
 
       <div className="contentCard">
         <div className="card">
+          
+          {
+            state && <RegistrarAdmin setState={() => setState(!state)} />
+          }
+
           <Titulo>StockPRO</Titulo>
           {stateInicio && (
             <TextoStateInicio>datos incorrectos</TextoStateInicio>
           )}
           <span className="ayuda">
             {" "}
-            Puedes crear una cuenta nueva ó <br></br>solicitar a tu empleador
+            Puedes crear una cuenta nueva ó <br></br>solicitar a tu administrador
             una. <MdOutlineInfo />
           </span>
           <p className="frase">Controla tu inventario.</p>
