@@ -16,7 +16,6 @@ import { Device } from "./styles/breackpoints";
 import { useLocation } from "react-router-dom";
 
 export const ThemeContext = createContext(null);
-
 function App() {
   const [themeuse, setTheme] = useState("dark");
   const theme = themeuse === "light" ? "light" : "dark";
@@ -28,7 +27,9 @@ function App() {
       <ThemeContext.Provider value={{ theme, setTheme }}>
         <ThemeProvider theme={themeStyle}>
           <AuthContextProvider>
-            {pathname != "/login" ? (
+            {pathname == "/login" ? (
+              <Login />
+            ) : (
               <Container className={sidebarOpen ? "active" : ""}>
                 <section className="ContentSidebar">
                   <Sidebar
@@ -43,8 +44,6 @@ function App() {
                   <MyRoutes />
                 </section>
               </Container>
-            ) : (
-              <Login />
             )}
 
             <ReactQueryDevtools initialIsOpen={false} />
