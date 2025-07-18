@@ -1,6 +1,5 @@
-import { supabase } from "../index";
 import Swal from "sweetalert2";
-
+import { ObtenerIdAuthSupabase, supabase } from "../index";
 export const InsertarUsuarios = async (p) => {
   const { data, error } = await supabase
     .from("usuarios")
@@ -11,7 +10,7 @@ export const InsertarUsuarios = async (p) => {
     Swal.fire({
       icon: "error",
       title: "Oops...",
-      text: "Error al insertar el usuario" + error.message,
+      text: "Error al insertar usuario " + error.message,
     });
   }
   if (data) return data;

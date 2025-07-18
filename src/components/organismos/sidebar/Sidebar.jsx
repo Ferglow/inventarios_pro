@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 import {
   
@@ -21,7 +20,7 @@ export function Sidebar({ state, setState }) {
           <div className="imgcontent">
             <img src={v.logo} />
           </div>
-          <h2>Inventaraios</h2>
+          <h2>StockPRO</h2>
         </div>
         {LinksArray.map(({ icon, label, to }) => (
           <div

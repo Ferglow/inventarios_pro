@@ -1,4 +1,3 @@
-
 import {supabase} from "../index"
 export const ObtenerIdAuthSupabase =async ()=>{
     const {data:{session}} = await supabase.auth.getSession();

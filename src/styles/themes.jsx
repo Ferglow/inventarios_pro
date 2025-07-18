@@ -1,4 +1,3 @@
-
 export const Light ={
     rgbafondoanimado:"rgba(102, 102, 102, 0.2)",
    body: "#fff",  

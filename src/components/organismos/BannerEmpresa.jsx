@@ -48,7 +48,7 @@ export function BannerEmpresa() {
               filterUnits="userSpaceOnUse"
               color-interpolation-filters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+              <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
               <feBlend
                 mode="normal"
                 in="SourceGraphic"

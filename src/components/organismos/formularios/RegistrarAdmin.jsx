@@ -31,7 +31,7 @@ export function RegistrarAdmin({ setState }) {
       if (dt) {
         navigate("/");
       } else {
-        setStateInicio(!stateInicio);
+        setStateInicio(false);
       }
     },
   });
