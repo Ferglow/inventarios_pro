@@ -9,13 +9,13 @@ export function BannerEmpresa() {
       <div className="content-wrapper-context">
         <span className="titulo">
           {<v.iconoempresa />}
-          {dataempresa.empresa?.nombre}
+          {dataempresa?.nombre}
         </span>
         <div className="content-text">
           StockPRO te mantiene siempre informado.
         </div>
         <ContentCards>
-          <CardDatosEmpresa titulo="Moneda" valor={dataempresa.empresa?.simbolomoneda} />
+          <CardDatosEmpresa titulo="Moneda" valor={dataempresa?.simbolomoneda} />
           
           <CardDatosEmpresa titulo="Usuarios" valor={contadorusuarios} />
           
@@ -48,7 +48,7 @@ export function BannerEmpresa() {
               filterUnits="userSpaceOnUse"
               color-interpolation-filters="sRGB"
             >
-              <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+              <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
               <feBlend
                 mode="normal"
                 in="SourceGraphic"

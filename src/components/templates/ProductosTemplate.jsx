@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Btnfiltro, Buscador, ContentFiltro, Header, RegistrarMarca, TablaMarca, Title,useMarcaStore,v } from "../../index";
+import { Btnfiltro, Buscador, ContentFiltro, Header,  RegistrarProductos, TablaProductos, Title,useMarcaStore,useProductosStore,v } from "../../index";
 import { useState } from "react";
-export function MarcaTemplate({data}) {
+export function ProductosTemplate({data}) {
   const [state, setState] = useState(false);
   const [dataSelect, setdataSelect] = useState([]);
   const [accion, setAccion] = useState("");
@@ -11,11 +11,11 @@ export function MarcaTemplate({data}) {
     setAccion("Nuevo")
     setdataSelect([])
   }
-  const {setBuscador} = useMarcaStore()
+  const {setBuscador} = useProductosStore()
   return (
     <Container>
       {
-        openRegistro &&  <RegistrarMarca dataSelect={dataSelect} accion={accion} onClose={()=>SetopenRegistro(!openRegistro)}/>
+        openRegistro &&  <RegistrarProductos dataSelect={dataSelect} accion={accion} onClose={()=>SetopenRegistro(!openRegistro)}/>
       }
      
       <header className="header">
@@ -26,7 +26,7 @@ export function MarcaTemplate({data}) {
       <section className="area1">
         <ContentFiltro>
           <Title>
-            Marcas
+            Productos
           </Title>
            <Btnfiltro funcion={nuevoRegistro} bgcolor="#f6f3f3"
             textcolor="#353535"
@@ -38,7 +38,7 @@ export function MarcaTemplate({data}) {
         <Buscador setBuscador={setBuscador}/>
       </section>
       <section className="main">
-        <TablaMarca data={data} SetopenRegistro={SetopenRegistro}
+        <TablaProductos data={data} SetopenRegistro={SetopenRegistro}
         setdataSelect={setdataSelect} setAccion={setAccion}/>
       </section>
     </Container>

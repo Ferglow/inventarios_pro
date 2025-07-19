@@ -1,7 +1,5 @@
 import {supabase} from "../index"
 import Swal from "sweetalert2"
-
-
 export async function InsertarCategorias(p) {
     const {error} = await supabase.rpc("insertarcategorias",p)
     if(error) {
